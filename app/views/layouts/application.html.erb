@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kasey</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if current_user %>
+<p><%= current_user.first_name %> <%= current_user.last_name %> <a href="/sessions/destroy" data-method="delete">Log Out</a></p>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
